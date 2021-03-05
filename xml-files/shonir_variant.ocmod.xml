@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+	<name>Product Variant - Shonir</name>
+	<version>1.0</version>
+	<code>shonir-variant</code>
+    <author>Shonir</author>
+    <link>http://www.shonir.com</link>
+	<file path="admin/controller/common/column_left.php">
+		<operation error="skip">
+			<search><![CDATA[if ($marketplace)]]></search>
+			<add position="before"><![CDATA[
+			if ($this->user->hasPermission('access', 'extension/shonir_variant')) {
+				$this->load->language('extension/shonir_variant_link');
+				$data['menus'][] = array(
+					'id'       => 'menu-shonir-variant',
+					'icon'	   => 'fa-list',
+					'name'	   => $this->language->get('text_shonir_variant'),
+					'href'     => $this->url->link('extension/shonir_variant', 'user_token=' . $this->session->data['user_token'], true),
+					'children' => array()
+				);
+			}
+				]]>
+			</add>
+		</operation>
+	</file>
+	<file path="catalog/controller/product/product.php">
+		<operation error="skip">
+			<search><![CDATA[$this->model_catalog_product->updateViewed($this->request->get['product_id']);]]></search>
+			<add position="after"><![CDATA[
+				$data['shonir_variant'] = $this->load->controller('product/shonir_variant');
+				]]>
+			</add>
+		</operation>
+	</file>
+	<file path="catalog/view/theme/*/template/product/product.twig">
+		<operation error="skip">
+			<search index="2"><![CDATA[{% if review_status %}]]></search>
+			<add position="before"><![CDATA[
+        {{ shonir_variant }}
+				]]></add>
+		</operation>
+	</file>
+</modification>

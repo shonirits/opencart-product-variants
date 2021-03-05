@@ -1,0 +1,42 @@
+{% for shonir_variant in shonir_variants %}
+<div class="shonir-variant">
+  <h4>{{ shonir_variant[0].title }}</h4>
+  <div class="row">
+    {% for product in shonir_variant[0].products %}
+      {% set productactive = product.product_id == base_product_id ? 'shonir-productactive' : '' %}
+      <div class="col-sm-4 {{ productactive }}">
+        <div class="product-thumb transition">
+          <div class="image">
+            <a href="{{ product.href }}" data-toggle="shonir-variant-tooltip" data-stock="{{ product.stock }}" data-title="{{ product.name }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a>
+          </div>
+          <div class="caption hide">
+            <h4><a href="{{ product.href }}"></a></h4>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{% endfor %}
+<style type="text/css">
+	.shonir-variant .image img{
+		padding: 4px;
+	}
+	.shonir-variant .shonir-productactive .product-thumb{
+		border: 2px solid #23a1d1;
+	}
+  .shonir-variant-tooltip { position: absolute; display: none; color: #fff; border-radius: 5px; -webkit-border-radius: 5px; background: #000; padding: 5px; border: 2px solid #444; }
+  .shonir-variant-tooltip strong { color: #fff; }
+</style>
+<script type="text/javascript">
+$('[data-toggle=\'shonir-variant-tooltip\']').hover(function(){
+  var text = '<strong>' + $(this).attr('data-title') + '</strong><br />' + $(this).attr('data-stock');
+  $('<p class="shonir-variant-tooltip">' + text + '</p>').appendTo('body').fadeIn('slow');
+}, function() {
+  $('.shonir-variant-tooltip').remove();
+}).mousemove(function(e) {
+  var mousex = e.pageX + 20;
+  var mousey = e.pageY + 10;
+  $('.shonir-variant-tooltip').css({ top: mousey, left: mousex })
+});
+</script>
