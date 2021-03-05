@@ -1,3 +1,37 @@
+Overview:
+This extension allows you to set product variants to website products. This is helpful when you have different variation / options of product. Show different product variants at product detail page, set image, name and you are ready to go!
+Using this extension customer can easily click and change the product page, as store owner you will be able to continue managing products that are separately related, without even use of OpenCart “options” feature. You can mention detail of every single variant, as it is simple separate product thus there will no effect on SEO of website.
+
+Features:
+* Link Products Together
+* Manage Stock Easily, Using SKU, Model
+* Customers Can Easily Switch Between Products
+* Display Recommended Products
+* Sortable Product Variants
+* Manage All Variants From Admin
+* Display Product Variants To Customers
+* Easy To Setup & Use Extension
+* Easy To Install on New or Existing Store
+* Easy Enable/Disable Extension
+* Quick Installation
+* Fully Customized Module
+* Multi language supported
+* Multi Store supported
+* Use OCMOD XML For Easy Installation
+* No Core File Modification
+
+Live Admin Demo:
+http://7.ex.com.pk/opencart-3.0.3.7/admin/
+
+Admin Login Information:
+User: demo
+Password: demo
+
+Live Store Demo:
+http://7.ex.com.pk/opencart-3.0.3.7/
+
+
+
 Shonir Product Variants
 
 If opencart version is 2.x and 3.x
