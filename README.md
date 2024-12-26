@@ -21,14 +21,14 @@ Features:
 * No Core File Modification
 
 Live Admin Demo:
-http://7.ex.com.pk/opencart-3.0.3.7/admin/
+https://8.shonir.com/opencart-3.0.4.0/admin/
 
 Admin Login Information:
 User: demo
 Password: demo
 
 Live Store Demo:
-http://7.ex.com.pk/opencart-3.0.3.7/
+https://8.shonir.com/opencart-3.0.4.0/
 
 
 
